@@ -6,7 +6,7 @@
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 14:38:37 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/04/12 17:28:41 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/04/14 16:32:35 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	*search(const char *s, const char *set)
 	while (*s)
 	{
 		if (!found(*s, set))
-			return ((char *)s);	
+			return ((char *)s);
 		s++;
 	}
 	return ((char *)s);
@@ -49,6 +49,7 @@ static char	*rsearch(const char *s, const char *set, size_t len)
 	}
 	return (end);
 }
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*arr;

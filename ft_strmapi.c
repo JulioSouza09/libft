@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/12 11:02:56 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/04/14 17:09:11 by jcesar-s         ###   ########.fr       */
+/*   Created: 2025/04/14 16:35:36 by jcesar-s          #+#    #+#             */
+/*   Updated: 2025/04/14 17:19:54 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,20 @@
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	char	*arr;
+	char			*array;
+	unsigned int	i;
 
-	if (!len || !*s || start >= ft_strlen(s))
-		return (ft_strdup(""));
-	if (len > ft_strlen(&s[start]))
-		len = ft_strlen(&s[start]);
-	arr = malloc(sizeof(char) * len + 1);
-	if (!arr)
+	array = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!array)
 		return (NULL);
 	i = 0;
-	while (s[start + i] && i < len)
+	while (s[i])
 	{
-		arr[i] = s[start + i];
-		++i;
+		array[i] = f(i, s[i]);
+		i++;
 	}
-	arr[i] = 0;
-	return (arr);
+	array[i] = 0;
+	return (array);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("%s\n", ft_substr("", 0, 1));	
-	return (0);
-}
-*/
