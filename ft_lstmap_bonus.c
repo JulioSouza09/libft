@@ -6,7 +6,7 @@
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 17:22:00 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/04/15 18:36:06 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/04/16 11:29:25 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,25 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*list;
-	t_list	*tmp;
-	void	*free_content;
+	t_list	*new_list;
+	t_list	*new_node;
+	void	*lst_cont;
 
-	if (!lst)
+	if (!lst || !f || !del)
 		return (NULL);
-	free_content = f(lst->content);
-	tmp = ft_lstnew(free_content);
-	if (!tmp)
-		ft_lstdelone(tmp, del);
-	lst = lst->next;
-	list = tmp;
+	new_list = NULL;
 	while (lst)
 	{
-		free_content = f(lst->content);
-		tmp->next = ft_lstnew(free_content);
-		if (!tmp)
-			ft_lstdelone(tmp, del);
+		lst_cont = f(lst->content);
+		new_node = ft_lstnew(lst_cont);
+		if (!new_node)
+		{
+			del(lst_cont);
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_node);
 		lst = lst->next;
-		tmp = tmp->next;
 	}
-	return (list);
+	return (new_list);
 }
