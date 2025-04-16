@@ -6,7 +6,7 @@
 #    By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/05 18:52:06 by jcesar-s          #+#    #+#              #
-#    Updated: 2025/04/14 18:24:32 by jcesar-s         ###   ########.fr        #
+#    Updated: 2025/04/15 18:07:39 by jcesar-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,10 @@ CFILES += ft_toupper.c ft_memmove.c ft_strnstr.c ft_strlcpy.c ft_memchr.c
 CFILES += ft_strlcat.c ft_strdup.c ft_calloc.c ft_putchar_fd.c ft_putstr_fd.c
 CFILES += ft_putendl_fd.c ft_putnbr_fd.c ft_itoa.c ft_strjoin.c ft_substr.c
 CFILES += ft_strtrim.c ft_split.c ft_strmapi.c ft_striteri.c
-BFILES = ft_lstnew_bonus.c
+BFILES = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c
+BFILES += ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c
+BFILES += ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+BOBJS = $(BFILES:.c=.o)
 OBJS = $(CFILES:.c=.o)
 
 all: $(NAME)
@@ -32,7 +35,7 @@ $(OBJS): $(CFILES)
 	$(CC) $(CFLAGS) -c $(CFILES)
 
 clean:
-	rm -f $(OBJS)
+	find -name "*.o" -delete
 
 fclean: clean
 	rm -f $(NAME)
@@ -41,3 +44,4 @@ re: fclean all
 
 bonus: $(BFILES) all
 	$(CC) $(CFLAGS) -c $(BFILES)
+	ar rcs $(NAME) $(BOBJS) 
