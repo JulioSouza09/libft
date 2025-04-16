@@ -6,7 +6,7 @@
 #    By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/05 18:52:06 by jcesar-s          #+#    #+#              #
-#    Updated: 2025/04/15 18:07:39 by jcesar-s         ###   ########.fr        #
+#    Updated: 2025/04/16 15:12:47 by jcesar-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,19 +29,18 @@ OBJS = $(CFILES:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS) 
+	ar rcs $(NAME) $(OBJS)
 
-$(OBJS): $(CFILES)
-	$(CC) $(CFLAGS) -c $(CFILES)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $^ -o $@
 
 clean:
-	find -name "*.o" -delete
+	rm -rf $(OBJS) $(BOBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus: $(BFILES) all
-	$(CC) $(CFLAGS) -c $(BFILES)
-	ar rcs $(NAME) $(BOBJS) 
+bonus: all $(BOBJS)
+	ar rcs $(NAME) $(BOBJS)

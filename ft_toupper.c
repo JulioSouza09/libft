@@ -6,11 +6,9 @@
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 15:53:19 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/04/09 16:33:27 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/04/16 15:38:35 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "strings.h"
 
 int	ft_toupper(int c)
 {
@@ -22,6 +20,7 @@ int	ft_toupper(int c)
 /*
 #include <stdio.h>
 #include <ctype.h>
+#include "strings.h"
 int	main(void)
 {
 	int	chars[] = {-1, 'a', 'z', '4', '\0', 'A', '>', 'Z'};

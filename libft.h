@@ -6,7 +6,7 @@
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 18:50:31 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/04/15 18:21:33 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:30:47 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include <stdint.h>
 
 typedef struct s_list
 {

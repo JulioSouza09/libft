@@ -6,11 +6,9 @@
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 16:34:21 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/04/10 14:20:41 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/04/16 15:38:45 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "strings.h"
 
 int	ft_tolower(int c)
 {
@@ -21,6 +19,7 @@ int	ft_tolower(int c)
 
 /*
 #include <stdio.h>
+#include "strings.h"
 #include <ctype.h>
 int	main(void)
 {

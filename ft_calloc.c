@@ -6,7 +6,7 @@
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 14:55:34 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/04/11 15:14:15 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/04/16 16:33:54 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*arr;
 
+	if (size && nmemb > SIZE_MAX / size)
+		return (NULL);
 	arr = malloc(nmemb * size);
 	if (arr == NULL)
 		return (NULL);

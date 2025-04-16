@@ -6,7 +6,7 @@
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 11:02:56 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/04/14 17:09:11 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/04/16 15:51:26 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > ft_strlen(&s[start]))
 		len = ft_strlen(&s[start]);
-	arr = malloc(sizeof(char) * len + 1);
+	arr = malloc(sizeof(char) * (len + 1));
 	if (!arr)
 		return (NULL);
 	i = 0;
