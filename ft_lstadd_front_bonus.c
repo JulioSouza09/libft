@@ -6,7 +6,7 @@
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:46:53 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/04/15 12:28:58 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/07/31 16:31:13 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new_node)
 {
-	if (!lst || !new)
+	if (!lst || !new_node)
 		return ;
-	new->next = *lst;
-	*lst = new;
+	new_node->next = *lst;
+	*lst = new_node;
 }
 
 // #include <stdio.h>
