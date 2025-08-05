@@ -6,7 +6,7 @@
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 11:42:47 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/04/15 10:11:49 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/08/05 18:34:59 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 #include "libft.h"
 
-static size_t	count_words(char const *str, char delimeter);
 static int		fill(char **vector, char const *str, char delimeter);
 static int		free_all(char **vector, size_t position);
 
@@ -33,23 +32,6 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	ptr[len] = NULL;
 	return (ptr);
-}
-
-static size_t	count_words(char const *str, char delimeter)
-{
-	size_t	len;
-
-	len = 0;
-	while (*str)
-	{
-		while (*str == delimeter && *str)
-			++str;
-		if (*str)
-			++len;
-		while (*str != delimeter && *str)
-			++str;
-	}
-	return (len);
 }
 
 static int	fill(char **vector, char const *str, char delimeter)
