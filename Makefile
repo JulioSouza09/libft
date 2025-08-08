@@ -6,7 +6,7 @@
 #    By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/05 18:52:06 by jcesar-s          #+#    #+#              #
-#    Updated: 2025/04/16 15:12:47 by jcesar-s         ###   ########.fr        #
+#    Updated: 2025/08/08 08:36:10 by jcesar-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFILES += ft_atoi.c ft_memcmp.c ft_strchr.c ft_strrchr.c ft_tolower.c
 CFILES += ft_toupper.c ft_memmove.c ft_strnstr.c ft_strlcpy.c ft_memchr.c
 CFILES += ft_strlcat.c ft_strdup.c ft_calloc.c ft_putchar_fd.c ft_putstr_fd.c
 CFILES += ft_putendl_fd.c ft_putnbr_fd.c ft_itoa.c ft_strjoin.c ft_substr.c
-CFILES += ft_strtrim.c ft_split.c ft_strmapi.c ft_striteri.c
+CFILES += ft_strtrim.c ft_split.c ft_strmapi.c ft_striteri.c count_words.c
 CFILES += get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 CFILES += ft_printf/ft_printf.c  ft_printf/ft_putchar.c  ft_printf/ft_putnbr.c
 CFILES += ft_printf/ft_putnbr_hex.c  ft_printf/ft_putnbr_u.c  ft_printf/ft_putptr.c
