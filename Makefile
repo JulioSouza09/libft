@@ -6,7 +6,7 @@
 #    By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/05 18:52:06 by jcesar-s          #+#    #+#              #
-#    Updated: 2025/09/02 17:27:33 by jcesar-s         ###   ########.fr        #
+#    Updated: 2025/09/02 17:46:34 by jcesar-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
 NAME = libft.a
 PRINTF_DIR=ft_printf
+PRINTF_ERR_DIR=ft_printf_err
 CFILES = ft_memset.c ft_strlen.c ft_bzero.c ft_memcpy.c ft_strncmp.c 
 CFILES += ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c
 CFILES += ft_atoi.c ft_memcmp.c ft_strchr.c ft_strrchr.c ft_tolower.c
@@ -39,6 +40,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(MAKE) -C $(PRINTF_DIR)
+	$(MAKE) -C $(PRINTF_ERR_DIR)
 	ar rcs $(NAME) $(OBJS) 
 
 %.o: %.c
