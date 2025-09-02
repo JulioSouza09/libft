@@ -6,7 +6,7 @@
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 18:50:31 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/08/05 18:34:36 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/09/02 17:50:39 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdint.h>
 # include "get_next_line/get_next_line.h"
 # include "ft_printf/ft_printf.h"
+# include "ft_printf_err/ft_printf_err.h"
 
 typedef struct s_list
 {
