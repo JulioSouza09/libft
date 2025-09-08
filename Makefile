@@ -6,11 +6,11 @@
 #    By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/05 18:52:06 by jcesar-s          #+#    #+#              #
-#    Updated: 2025/09/08 19:18:26 by jcesar-s         ###   ########.fr        #
+#    Updated: 2025/09/08 19:25:05 by jcesar-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 NAME = libft.a
 PRINTF_DIR=ft_printf
