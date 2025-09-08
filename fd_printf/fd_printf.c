@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_err.c                                    :+:      :+:    :+:   */
+/*   fd_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 17:38:47 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/09/08 18:32:52 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/09/08 19:20:04 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	ft_putconv(int fd, int stamp, va_list format)
 		return (0);
 }
 
-int	ft_printf_fd(int fd, const char *str, ...)
+int	ft_printf(int fd, const char *str, ...)
 {
 	va_list	value;
 	int		count;
