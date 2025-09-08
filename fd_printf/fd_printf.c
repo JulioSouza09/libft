@@ -10,26 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_fd.h"
+#include "fd_printf.h"
 
 static int	ft_putconv(int fd, int stamp, va_list format)
 {
 	if (stamp == 'c')
-		return (ft_putchar(fd, va_arg(format, int)));
+		return (fd_putchar(fd, va_arg(format, int)));
 	else if (stamp == 's')
-		return (ft_putstr(fd, va_arg(format, char *)));
+		return (fd_putstr(fd, va_arg(format, char *)));
 	else if (stamp == 'i' || stamp == 'd')
-		return (ft_putnbr(fd, va_arg(format, int)));
+		return (fd_putnbr(fd, va_arg(format, int)));
 	else if (stamp == '%')
-		return (ft_putchar(fd, '%'));
+		return (fd_putchar(fd, '%'));
 	else if (stamp == 'u')
-		return (ft_putnbr_u(fd, va_arg(format, unsigned int)));
+		return (fd_putnbr_u(fd, va_arg(format, unsigned int)));
 	else if (stamp == 'p')
-		return (ft_putptr(fd, (unsigned long)va_arg(format, void *), 1));
+		return (fd_putptr(fd, (unsigned long)va_arg(format, void *), 1));
 	else if (stamp == 'X')
-		return (ft_putnbr_hex(fd, va_arg(format, unsigned int), 'u'));
+		return (fd_putnbr_hex(fd, va_arg(format, unsigned int), 'u'));
 	else if (stamp == 'x')
-		return (ft_putnbr_hex(fd, va_arg(format, unsigned int), 'l'));
+		return (fd_putnbr_hex(fd, va_arg(format, unsigned int), 'l'));
 	else
 		return (0);
 }
@@ -45,7 +45,7 @@ int	ft_printf_fd(int fd, const char *str, ...)
 	{
 		if (*str != '%')
 		{
-			count += ft_putchar(fd, *str++);
+			count += fd_putchar(fd, *str++);
 			continue ;
 		}
 		count += ft_putconv(fd, *++str, value);
