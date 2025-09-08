@@ -6,13 +6,13 @@
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 13:16:46 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/09/02 17:24:02 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/09/08 18:29:27 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_err.h"
+#include "ft_printf_fd.h"
 
-int	ft_putchar(char c)
+int	ft_putchar(int fd, char c)
 {
-	return (write(2, &c, 1));
+	return (write(fd, &c, 1));
 }

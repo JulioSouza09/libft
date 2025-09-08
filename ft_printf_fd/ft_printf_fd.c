@@ -6,35 +6,35 @@
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 17:38:47 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/09/02 17:23:33 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/09/08 18:32:52 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_err.h"
+#include "ft_printf_fd.h"
 
-static int	ft_putconv(int stamp, va_list format)
+static int	ft_putconv(int fd, int stamp, va_list format)
 {
 	if (stamp == 'c')
-		return (ft_putchar(va_arg(format, int)));
+		return (ft_putchar(fd, va_arg(format, int)));
 	else if (stamp == 's')
-		return (ft_putstr(va_arg(format, char *)));
+		return (ft_putstr(fd, va_arg(format, char *)));
 	else if (stamp == 'i' || stamp == 'd')
-		return (ft_putnbr(va_arg(format, int)));
+		return (ft_putnbr(fd, va_arg(format, int)));
 	else if (stamp == '%')
-		return (ft_putchar('%'));
+		return (ft_putchar(fd, '%'));
 	else if (stamp == 'u')
-		return (ft_putnbr_u(va_arg(format, unsigned int)));
+		return (ft_putnbr_u(fd, va_arg(format, unsigned int)));
 	else if (stamp == 'p')
-		return (ft_putptr((unsigned long)va_arg(format, void *), 1));
+		return (ft_putptr(fd, (unsigned long)va_arg(format, void *), 1));
 	else if (stamp == 'X')
-		return (ft_putnbr_hex(va_arg(format, unsigned int), 'u'));
+		return (ft_putnbr_hex(fd, va_arg(format, unsigned int), 'u'));
 	else if (stamp == 'x')
-		return (ft_putnbr_hex(va_arg(format, unsigned int), 'l'));
+		return (ft_putnbr_hex(fd, va_arg(format, unsigned int), 'l'));
 	else
 		return (0);
 }
 
-int	ft_printf_err(const char *str, ...)
+int	ft_printf_fd(int fd, const char *str, ...)
 {
 	va_list	value;
 	int		count;
@@ -45,10 +45,10 @@ int	ft_printf_err(const char *str, ...)
 	{
 		if (*str != '%')
 		{
-			count += ft_putchar(*str++);
+			count += ft_putchar(fd, *str++);
 			continue ;
 		}
-		count += ft_putconv(*++str, value);
+		count += ft_putconv(fd, *++str, value);
 		++str;
 	}
 	va_end(value);
