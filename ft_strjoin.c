@@ -6,7 +6,7 @@
 /*   By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 17:35:31 by jcesar-s          #+#    #+#             */
-/*   Updated: 2025/04/11 18:13:47 by jcesar-s         ###   ########.fr       */
+/*   Updated: 2025/09/14 16:21:28 by jcesar-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!arr)
 		return (NULL);
 	i = 0;
-	while (*s1)
+	while (s1 && *s1)
 	{
 		arr[i] = *s1;
 		++i;
 		++s1;
 	}
-	while (*s2)
+	while (s2 && *s2)
 	{
 		arr[i] = *s2;
 		++s2;
