@@ -6,7 +6,7 @@
 #    By: jcesar-s <jcesar-s@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/05 18:52:06 by jcesar-s          #+#    #+#              #
-#    Updated: 2025/09/08 19:25:05 by jcesar-s         ###   ########.fr        #
+#    Updated: 2025/09/14 18:23:32 by jcesar-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ CFILES += ft_strlcat.c ft_strdup.c ft_calloc.c ft_putchar_fd.c ft_putstr_fd.c
 CFILES += ft_putendl_fd.c ft_putnbr_fd.c ft_itoa.c ft_strjoin.c ft_substr.c
 CFILES += ft_strtrim.c ft_split.c ft_strmapi.c ft_striteri.c count_words.c
 CFILES += get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
+CFILES += ft_strcmp.c
 CFILES += ft_printf/ft_printf.c  ft_printf/ft_putchar.c  ft_printf/ft_putnbr.c
 CFILES += ft_printf/ft_putnbr_hex.c  ft_printf/ft_putnbr_u.c  ft_printf/ft_putptr.c
 CFILES += ft_printf/ft_putstr.c
